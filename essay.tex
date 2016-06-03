@@ -217,7 +217,7 @@ NAIST ではこれまでのオーバレイに関する研究を活かし，ノ�
 私は経路表構築とルーティングの両者が密接に関係してこそ理想的なオーバレイが実現できると考えている．
 そこで，グループ情報を考慮した経路表と通信遅延を考慮した経路表を構築し，これらを用いて適切なルーティングを行うことで複数の状態の考慮を両立しようと考えている．
 
-\begin{figure*}[h]
+\begin{figure*}[ht]
   \centering
   \includegraphics[width=120mm]{fig/str.pdf}
   \caption{提案手法の概要図}
@@ -233,7 +233,7 @@ FRT-Chord に基づいて DHT を設計する．図\ref{fig:example}に提案手
 \end{align}
 
 各ノードは経路表 $E = E_S \cup E_G \cup E_P = \{e_i\} \ (i = 0, \cdots, |E| - 1)$ を持つ．
-経路表のエントリはノード ID と IP アドレスの対である．
+経路表のエントリはノード ID と IP アドレスの対で，ネスクトホップの候補である．
 $E_S$ は Chord における successor list や predecessor に相当し，到達性を保証する役割を果たす．
 $E_G, E_P$ はそれぞれグループ情報を考慮したエントリ集合と通信遅延を考慮したエントリ集合で，構築方法は以降に述べる．
 
@@ -264,7 +264,7 @@ $O(\log N)$ の経路長とグループ情報，通信遅延のすべてを考�
 %
 %\begin{itemize}
 %  \item $e_\mathrm{remove} \in E_P$ かつ $E_P \setminus \{e_\mathrm{remove}\}$ の平均通信遅延時間が $E_P \setminus \{e_P\ |\ \forall e_P \in E_P\} $ の平均通信遅延時間よりも大きいとき，$e_\mathrm{remove}$ を，
-%  \item そうでない場合は 
+%  \item そうでない場合は
 %\end{itemize}
 
 
